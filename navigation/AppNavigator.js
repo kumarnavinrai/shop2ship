@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
@@ -12,10 +12,13 @@ export default createAppContainer(
     Main: MyDrawerNavigator,
    }
   )
-); */
+); 
+
+/*
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import Icon from '@expo/vector-icons/Ionicons';
+*/
 /**
  * - AppSwitchNavigator
  *    - WelcomeScreen
@@ -29,7 +32,7 @@ import Icon from '@expo/vector-icons/Ionicons';
  *              - Tab 3 - SettingsStack
  *            - Any files you don't want to be a part of the Tab Navigator can go here.
  */
-import { Platform } from 'react-native';
+/*import { Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createDrawerNavigator } from 'react-navigation-drawer';
@@ -100,6 +103,76 @@ class Profile extends Component {
   }
 }
 
+class Hiw extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>How it works?</Text>
+      </View>
+    );
+  }
+}
+
+class Services extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Services</Text>
+      </View>
+    );
+  }
+}
+
+class Membership extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Membership</Text>
+      </View>
+    );
+  }
+}
+
+class Stfp extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Sales tax free partners</Text>
+      </View>
+    );
+  }
+}
+
+class Wn extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Whats new</Text>
+      </View>
+    );
+  }
+}
+
+class Faq extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Frequently asked questions</Text>
+      </View>
+    );
+  }
+}
+
+class Lc extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Live chat</Text>
+      </View>
+    );
+  }
+}
+
 const DashboardTabNavigator = createBottomTabNavigator(
   {
     Feed,
@@ -115,6 +188,7 @@ const DashboardTabNavigator = createBottomTabNavigator(
     }
   }
 );
+
 const DashboardStackNavigator = createStackNavigator(
   {
     DashboardTabNavigator: DashboardTabNavigator
@@ -138,6 +212,9 @@ const DashboardStackNavigator = createStackNavigator(
 const AppDrawerNavigator = createDrawerNavigator({
   Dashboard: {
     screen: DashboardStackNavigator
+  },
+  How: {
+    screen: Hiw
   }
 });
 
@@ -154,4 +231,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   }
-});
+}); */

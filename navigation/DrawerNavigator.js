@@ -11,79 +11,21 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Icon from '@expo/vector-icons/Ionicons';
+import { createStackNavigator } from 'react-navigation-stack';
 
-
-import MyHeader from "./MyHeader";
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import HomeScreenNew from '../screens/HomeScreenNew';
+import HiwScreen from '../screens/HiwScreen';
+import ServicesScreen from '../screens/ServicesScreen';
+import MembershipScreen from '../screens/MembershipScreen';
+import SalestaxScreen from '../screens/SalesTaxFreePartnersScreen';
+import WhatsnewScreen from '../screens/WhatsNewScreen';
+import FaqScreen from '../screens/FaqScreen';
+import LiveChatScreen from '../screens/LiveChatScreen';
 
-class MyHomeScreen extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Home',
-    tabBarIcon: ({ focused }) => (
-      <TabBarIcon
-        focused={focused}
-        name={
-          Platform.OS === 'ios'
-            ? `ios-information-circle${focused ? '' : '-outline'}`
-            : 'md-information-circle'
-        }
-      />
-    ),
-    drawerLabel: 'Home',
-    drawerIcon: ({ tintColor }) => (
-      <Image
-        source={require('./chats-icon.png')}
-        style={[styles.icon, { tintColor: tintColor }]}
-      />
-    ),
-  };
 
-  render() {
-    return (
-      <View style={{margin:1}}>
-        <MyHeader navigation={this.props.navigation} title="Home" />
-        <Text>This is Home Screen</Text>
-        <Button
-          onPress={() => this.props.navigation.navigate('Notifications')}
-          title="Go to nitif"
-        />
-      </View>
-    );
-  }
-}
-
-class MyNotificationsScreen extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Noti',
-    tabBarIcon: ({ focused }) => (
-      <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-    ),
-    drawerLabel: 'Notifications',
-    drawerIcon: ({ tintColor }) => (
-      <Image
-        source={require('./notif-icon.png')}
-        style={[styles.icon, { tintColor: tintColor }]}
-      />
-    ),
-  };
-
-  render() {
-    return (
-    <View style={{margin:1}}>
-      <MyHeader navigation={this.props.navigation} title="Settings" />
-      <Text>This is Settings Screen</Text>
-      <Button
-        onPress={() => this.props.navigation.goBack()}
-        title="Go back home"
-      />
-    </View>  
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   icon: {
@@ -94,11 +36,68 @@ const styles = StyleSheet.create({
 
 const MyDrawerNavigator = createDrawerNavigator({
   Home: {
-    screen: MyHomeScreen,
+    screen: HomeScreenNew,
   },
-  Notifications: {
-    screen: MyNotificationsScreen,
+  Howitworks: {
+    screen: HiwScreen,
   },
+  Services: {
+    screen: ServicesScreen,
+  },
+  Membership: {
+    screen: MembershipScreen,
+  },
+  SalestaxFreePartners: {
+    screen: SalestaxScreen,
+  },
+  WhatsNew: {
+    screen: WhatsnewScreen,
+  },
+  FAQ: {
+    screen: FaqScreen,
+  },
+  LiveChat: {
+    screen: LiveChatScreen,
+  },
+
 });
 
-export default MyDrawerNavigator;
+const DashboardStackNavigator = createStackNavigator(
+  {
+    screens: MyDrawerNavigator,
+  },
+  {
+    defaultNavigationOptions: ({ navigation }) => {
+      return {
+        headerLeft: (
+          <Icon
+            style={{ paddingLeft: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-menu"
+            size={30}
+          />
+        ),
+        headerRight: (
+          <Icon
+            style={{ paddingRight: 10 }}
+            onPress={() => navigation.openDrawer()}
+            name="md-contact"
+            size={30}
+          />
+        ),
+        headerBackground: (
+          <Image
+            style={{width:150, height: 30, margin: 35, marginLeft: 85}}
+            source={{ uri: 'http://infopro.site/hbacks.png' }}
+          />
+        ),
+        headerTitleStyle: { color: '#fff' },
+      };
+    },
+    navigationOptions: {
+      headershown: false,
+    },
+  }
+);
+
+export default DashboardStackNavigator;
