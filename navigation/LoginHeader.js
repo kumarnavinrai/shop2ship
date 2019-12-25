@@ -1,16 +1,15 @@
 import React from "react";
 import { Header } from "react-native-elements";
 
-import HamburgerMenu from "./HamburgerMenu";
+import BackarrowMenu from "./BackarrowMenu";
 import ProfileMenu from "./ProfileMenu";
 import LogoBarMenu from "./LogoBarMenu";
 
-const MyHeader = props => {
+const LoginHeader = props => {
   return (
     <Header
-      leftComponent={<HamburgerMenu navigation={props.navigation} />}
+      leftComponent={<BackarrowMenu navigation={props.navigation} />}
       centerComponent={<LogoBarMenu navigation={props.navigation} />}
-      rightComponent={<ProfileMenu navigation={props.navigation} />}
       statusBarProps={{ barStyle: "light-content" }}
       containerStyle={{
         backgroundColor: '#E3E3E3',
@@ -20,4 +19,4 @@ const MyHeader = props => {
   );
 };
 
-export default MyHeader;
+export default LoginHeader;

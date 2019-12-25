@@ -12,7 +12,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/mappicon.png", // 515x512
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -25,7 +25,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+       "bundleIdentifier": "com.trantor.shop2ship"
+    },
+    "notification": {
+      "icon": "./assets/images/appiconnoti.png", // 144 x 144
+      "color": "#000000"
+    },
+    "loading": {
+      "icon": "./assets/images/appicon.png", // 500 x 500
     },
     "android": {
       "package": "com.trantor.shop2ship"

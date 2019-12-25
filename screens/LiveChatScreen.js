@@ -9,39 +9,37 @@ import {
   Text,
   Button,
   TouchableOpacity,
+  Dimensions,
   View,
 } from 'react-native';
 import Icon from '@expo/vector-icons/Ionicons';
+import MyHeader from "../navigation/MyHeader";
 
 export default class LiveChatScreen extends React.Component {
+
   static navigationOptions = {
-    tabBarLabel: 'Live Chat',
-    tabBarIcon: ({ focused }) => (
-      <TabBarIcon
-        focused={focused}
-        name={
-          Platform.OS === 'ios'
-            ? `ios-information-circle${focused ? '' : '-outline'}`
-            : 'md-information-circle'
-        }
-      />
-    ),
-    drawerLabel: 'Live Chat',
-    drawerIcon: ({ tintColor }) => (
-      <Image
-        source={require('./chats-icon.png')}
-        style={[styles.icon, { tintColor: tintColor }]}
-      />
-    ),
-  };
+      drawerIcon: ({ tintColor }) => (
+        null
+      ),
+      drawerLabel: ({ tintColor }) => (
+        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start', backgroundColor: '#FFFFFF', margin: 5 }}>
+          <View style={{marginLeft: 10, marginTop: 15, width: Dimensions.get('window').width - 220}}>
+            <Text style={{fontWeight: "bold"}} >Live Chat</Text>
+          </View>
+          <View>
+            <Image
+              source={require('../assets/images/message.png')}
+              style={[styles.icon, { tintColor: tintColor }]}
+            />
+          </View>  
+        </View>  
+      ),
+    };
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Button
-          onPress={() => this.props.navigation.navigate('Notifications')}
-          title="Go to nitif"
-        />
+      <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', backgroundColor: '#E3E3E3' }}>
+        <MyHeader navigation={this.props.navigation} title="Live Chat" />
         <Text style={{ }}>Live Chat</Text>
       </View>
     );
@@ -50,7 +48,7 @@ export default class LiveChatScreen extends React.Component {
 
 const styles = StyleSheet.create({
   icon: {
-    width: 24,
-    height: 24,
+    width: 50,
+    height: 50,
   },
 });

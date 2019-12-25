@@ -4,7 +4,7 @@ import { Icon } from "react-native-elements";
 const HamburgerMenu = props => {
   return (
     <Icon
-      color="#fff"
+      color="#000"
       name="menu"
       onPress={() => props.navigation.toggleDrawer()}
     />
