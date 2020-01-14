@@ -6,7 +6,7 @@ const ProfileMenu = props => {
     <Icon
       color="#000"
       name="md-contact"
-      onPress={() => props.navigation.navigate('signin')}
+      onPress={() => props.navigation.navigate('profile')}
       size={30}
     />
   );

@@ -31,6 +31,9 @@ import FaqScreen from '../screens/FaqScreen';
 import LiveChatScreen from '../screens/LiveChatScreen';
 import SigninScreen from '../screens/SigninScreen';
 import SignupScreen from '../screens/SignupScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
+import EditPScreen from '../screens/EditPScreen';
 
 
 
@@ -71,11 +74,22 @@ const MyDrawerNavigator = createDrawerNavigator({
   },
   signup: {
     screen: SignupScreen
+  },
+  profile: {
+    screen: ProfileScreen
+  },
+  editprofile: {
+    screen: EditProfileScreen
+  },
+  editp: {
+    screen: EditPScreen
   }
+
 }
 ,
   {
     initialRouteName:'Home',
+    headerMode: 'none',
     drawerWidth: Dimensions.get('window').width - 140,
     contentComponent: (props) => (
     <SafeAreaView style={{flex: 1, backgroundColor: '#E3E3E3'}}>

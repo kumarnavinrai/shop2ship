@@ -1,12 +1,13 @@
 import React from "react";
-import { Icon } from "react-native-elements";
+import Icon from '@expo/vector-icons/Ionicons';
 
 const BackarrowMenu = props => {
   return (
     <Icon
       color="#000"
-      name="chevron-left"
+      name="ios-arrow-round-back"
       onPress={() => props.navigation.goBack()}
+      size={40}
     />
   );
 };

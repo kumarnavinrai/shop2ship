@@ -40,7 +40,17 @@ export default class WhatsnewScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'flex-start', backgroundColor: '#E3E3E3' }}>
         <MyHeader navigation={this.props.navigation} title="Whats New" />
-        <Text style={{ }}>Whats New</Text>
+        <ScrollView contentContainerStyle={{ flex: 1, alignSelf: 'center', alignItems: 'center', justifyContent: 'center', backgroundColor: '#E3E3E3' }}>
+          <View style={{ flex: 1, alignSelf: 'center', alignItems: 'center', justifyContent: 'center', backgroundColor: '#E3E3E3', marginLeft: '5%' }}>
+              <Image
+                source={require('../assets/images/CyberMonda.png')}
+                style={[styles.iconimg, { }]}
+              />
+          </View>
+          <View style={{ flex: 1, alignSelf: 'center', alignItems: 'center', justifyContent: 'center', marginLeft: '5%' }}>
+            <Text style={{ textAlign: 'left', fontSize: 16, fontWeight: 'bold', color: '#0C0C0C' }}>Get ready for Cyber Monday 2019{'\n'} Sales!</Text>
+          </View>
+        </ScrollView>
       </View>
     );
   }
@@ -50,5 +60,10 @@ const styles = StyleSheet.create({
   icon: {
     width: 50,
     height: 50,
+  },
+  iconimg: {
+    width: 250,
+    height: 250,
+    marginLeft: '5%',
   },
 });

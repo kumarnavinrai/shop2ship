@@ -15,6 +15,8 @@ const MyHeader = props => {
       containerStyle={{
         backgroundColor: '#E3E3E3',
         justifyContent: 'space-around',
+        paddingBottom: 25,
+        height:60,
       }}
     />
   );

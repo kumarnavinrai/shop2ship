@@ -12,7 +12,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/mappicon.png", // 515x512
+    "icon": "./assets/images/mappicon.png",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -29,14 +29,14 @@
        "bundleIdentifier": "com.trantor.shop2ship"
     },
     "notification": {
-      "icon": "./assets/images/appiconnoti.png", // 144 x 144
+      "icon": "./assets/images/appiconnoti.png",
       "color": "#000000"
     },
     "loading": {
-      "icon": "./assets/images/appicon.png", // 500 x 500
+      "icon": "./assets/images/appicon.png",
     },
     "android": {
-      "package": "com.trantor.shop2ship"
+      "package": "com.trantor.shop2ship",
     }
   }
 }
